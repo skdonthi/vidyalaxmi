@@ -2,8 +2,8 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-# Install uv
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /usr/local/bin/
+# Install uv via pip to bypass ghcr.io proxy blocks
+RUN pip install uv
 
 # Install deps via uv (no venv — system install)
 COPY requirements.txt .
