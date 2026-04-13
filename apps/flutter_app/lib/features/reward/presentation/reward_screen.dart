@@ -44,6 +44,17 @@ class _RewardScreenState extends ConsumerState<RewardScreen>
   Future<void> _awardCoins() async {
     await Future.delayed(const Duration(milliseconds: 300));
     await ZHaptics.reward();
+
+    // Update progress in Supabase
+    await ref.read(userProgressProvider.notifier).updateProgress(
+          topicId: widget.topicId,
+          score: widget.coinsEarned * 10, // Approximate score from coins
+          accuracy: 1.0, // Assuming 100% for MVP demo
+          difficulty: 1,
+          completed: true,
+        );
+
+    // Award L-Coins
     await ref.read(economyNotifierProvider.notifier).awardCoins(
           amount: widget.coinsEarned,
           description: 'Completed topic: ${widget.topicId}',
