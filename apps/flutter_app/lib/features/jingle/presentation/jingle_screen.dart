@@ -78,16 +78,11 @@ class _JingleScreenState extends ConsumerState<JingleScreen>
   }
 
   Future<void> _startPlayback() async {
-    try {
-      await _player.play(AssetSource(_jingle.audioUrl.replaceFirst('assets/', '')));
-      setState(() => _playing = true);
-    } catch (_) {
-      // Audio file not yet available — play silently for MVP demo
-      setState(() {
-        _duration = Duration(milliseconds: _jingle.durationMs);
-      });
-      _simulatePlayback();
-    }
+    // Force TTS for MVP demo to avoid roar placeholder
+    setState(() {
+      _duration = Duration(milliseconds: _jingle.durationMs);
+    });
+    _simulatePlayback();
   }
 
   void _simulatePlayback() {
