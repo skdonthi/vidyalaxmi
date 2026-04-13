@@ -43,7 +43,7 @@ final kDemoJingle = Jingle(
   id: 'jingle-telugu-letters-1',
   topicId: 'telugu-letters-1',
   audioUrl: 'assets/audio/telugu_letters_1.mp3',
-  durationMs: 30000,
+  durationMs: 18000,
   titleEn: 'The Akshara Song',
   lyrics: const [
     LyricLine(

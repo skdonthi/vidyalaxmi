@@ -232,8 +232,8 @@ class _JingleScreenState extends ConsumerState<JingleScreen>
                       if (_finished)
                         Expanded(
                           child: ZButton(
-                            label: 'Enter Boss Fight!',
-                            icon: Icons.sports_kabaddi,
+                            label: 'Start Challenge',
+                            icon: Icons.play_arrow,
                             onPressed: () => context.pushReplacement(
                               '/boss-fight/${widget.topicId}',
                             ),
