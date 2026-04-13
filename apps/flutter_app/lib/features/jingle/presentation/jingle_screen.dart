@@ -1,6 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/router/app_router.dart';
@@ -23,6 +24,7 @@ class JingleScreen extends ConsumerStatefulWidget {
 class _JingleScreenState extends ConsumerState<JingleScreen>
     with SingleTickerProviderStateMixin {
   final _player = AudioPlayer();
+  final _tts = FlutterTts();
   Duration _position = Duration.zero;
   Duration _duration = Duration.zero;
   bool _playing = false;
@@ -35,6 +37,8 @@ class _JingleScreenState extends ConsumerState<JingleScreen>
   void initState() {
     super.initState();
     _jingle = kDemoJingle; // TODO: load from repo by topicId
+
+    _initTts();
 
     _player.onPositionChanged.listen((pos) {
       if (!mounted) return;
@@ -60,6 +64,19 @@ class _JingleScreenState extends ConsumerState<JingleScreen>
     _startPlayback();
   }
 
+  Future<void> _initTts() async {
+    await _tts.setLanguage(ref.read(localeProvider).languageCode);
+    await _tts.setSpeechRate(0.5);
+    await _tts.setVolume(1.0);
+    await _tts.setPitch(1.0);
+  }
+
+  Future<void> _speak(String text) async {
+    final locale = ref.read(localeProvider).languageCode;
+    await _tts.setLanguage(locale);
+    await _tts.speak(text);
+  }
+
   Future<void> _startPlayback() async {
     try {
       await _player.play(AssetSource(_jingle.audioUrl.replaceFirst('assets/', '')));
@@ -76,6 +93,8 @@ class _JingleScreenState extends ConsumerState<JingleScreen>
   void _simulatePlayback() {
     Future.delayed(const Duration(milliseconds: 100), () {
       if (!mounted) return;
+      
+      final oldLyric = _currentLyric;
       setState(() {
         _position = _position + const Duration(milliseconds: 100);
         if (_position.inSeconds >= 10) _canSkip = true;
@@ -84,6 +103,12 @@ class _JingleScreenState extends ConsumerState<JingleScreen>
           return;
         }
       });
+
+      final newLyric = _currentLyric;
+      if (newLyric != null && newLyric != oldLyric) {
+        _speak(newLyric.textFor(ref.read(localeProvider).languageCode));
+      }
+
       if (!_finished) _simulatePlayback();
     });
   }

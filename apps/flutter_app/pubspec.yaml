@@ -28,6 +28,7 @@ dependencies:
 
   # Audio
   audioplayers: ^6.6.0
+  flutter_tts: ^4.2.2
 
   # Haptics
   vibration: ^2.0.1
