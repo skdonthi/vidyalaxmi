@@ -3,28 +3,9 @@ Manga-style PDF Scroll generator.
 Uses Jinja2 for HTML templating + WeasyPrint for PDF rendering.
 """
 
-import os
 from pathlib import Path
-from jinja2 import Environment, FileSystemLoader
 
-try:
-    import weasyprint
-    _WEASYPRINT_AVAILABLE = True
-except Exception:
-    _WEASYPRINT_AVAILABLE = False
-
-try:
-    from fpdf import FPDF
-    _FPDF_AVAILABLE = True
-except Exception:
-    _FPDF_AVAILABLE = False
-
-TEMPLATES_DIR = Path(__file__).parent.parent.parent / "templates" / "manga_scroll"
-
-_jinja_env = Environment(
-    loader=FileSystemLoader(str(TEMPLATES_DIR)),
-    autoescape=True,
-)
+from fpdf import FPDF
 
 # Demo topic data — in production, fetched from Supabase
 _TOPIC_DATA = {
@@ -90,22 +71,6 @@ async def generate_scroll_pdf(topic_id: str, locale: str = "en") -> bytes:
     if not topic_data:
         raise ValueError(f"No topic data found for: {topic_id}")
 
-    template = _jinja_env.get_template("scroll.html")
-    html_content = template.render(
-        topic=topic_data,
-        locale=locale,
-        primary_color="#00F2FF",
-        secondary_color="#FF00E5",
-        success_color="#39FF14",
-        bg_color="#050505",
-        text_color="#EAEAEA",
-    )
-
-    if _WEASYPRINT_AVAILABLE:
-        pdf_bytes = weasyprint.HTML(string=html_content).write_pdf()
-        return pdf_bytes
-
-    # Fallback: fpdf2 plain-text PDF when WeasyPrint not available
     return _generate_fallback_pdf(topic_data)
 
 
