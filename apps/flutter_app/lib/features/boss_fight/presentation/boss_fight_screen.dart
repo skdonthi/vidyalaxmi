@@ -212,11 +212,13 @@ class _BossFightScreenState extends ConsumerState<BossFightScreen>
                           Expanded(
                             child: switch (question.type) {
                               QuestionType.dragDrop => DragDropChallenge(
+                                  key: ValueKey('dd_${question.id}'),
                                   pairs: question.dragPairs,
                                   onAllCorrect: _onCorrect,
                                   onMistake: _onWrong,
                                 ),
                               QuestionType.speedTap => SpeedTapChallenge(
+                                  key: ValueKey('st_${question.id}'),
                                   options: question.options,
                                   correctId: question.correctOptionId,
                                   onCorrect: _onCorrect,
