@@ -1,0 +1,55 @@
+{
+  "@@locale": "hi",
+  "appTitle": "विद्यालक्ष्मी",
+  "startLearning": "सीखना शुरू करें",
+  "continueQuest": "यात्रा जारी रखें",
+  "skillTreeTitle": "कौशल वृक्ष",
+  "streakDays": "{count} दिन की स्ट्रीक",
+  "@streakDays": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "lCoins": "{count} एल-कॉइन",
+  "@lCoins": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "jingleTitle": "कॉन्सेप्ट गाना",
+  "jingleSkip": "छोड़ें",
+  "jingleContinue": "जारी रखें",
+  "bossFightTitle": "बॉस फाइट",
+  "bossFightDragInstruction": "मिलाने के लिए खींचें",
+  "bossFightTapInstruction": "सही उत्तर टैप करें",
+  "livesRemaining": "{count} जीवन बचे हैं",
+  "@livesRemaining": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "correct": "सही!",
+  "wrong": "फिर कोशिश करें!",
+  "rewardTitle": "क्वेस्ट पूरी!",
+  "rewardSubtitle": "आपने कमाया",
+  "rewardContinue": "यात्रा जारी रखें",
+  "rewardCustomize": "मेंटर कस्टमाइज़ करें",
+  "scrollTitle": "आपकी चीट शीट",
+  "scrollDownload": "PDF डाउनलोड करें",
+  "profileTitle": "मेरी प्रोफाइल",
+  "settingsLanguage": "भाषा",
+  "settingsEnglish": "अंग्रेज़ी",
+  "settingsTelugu": "तेलुगू",
+  "settingsHindi": "हिंदी",
+  "mentorZayn": "ज़ैन",
+  "mentorArya": "आर्या",
+  "mentorDhara": "धरा",
+  "mentorSubjectPhysics": "भौतिकी और तकनीक",
+  "mentorSubjectMath": "गणित और तर्क",
+  "mentorSubjectBio": "जीव विज्ञान और सामाजिक",
+  "topicLocked": "लॉक्ड",
+  "topicComplete": "पूर्ण",
+  "topicAvailable": "शुरू करें",
+  "errorGeneral": "कुछ गलत हो गया। फिर कोशिश करें।",
+  "loading": "लोड हो रहा है..."
+}

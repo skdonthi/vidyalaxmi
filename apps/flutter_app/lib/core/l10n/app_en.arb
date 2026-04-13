@@ -1,0 +1,55 @@
+{
+  "@@locale": "en",
+  "appTitle": "VidyaLaxmi",
+  "startLearning": "Start Learning",
+  "continueQuest": "Continue Quest",
+  "skillTreeTitle": "Skill Tree",
+  "streakDays": "{count} Day Streak",
+  "@streakDays": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "lCoins": "{count} L-Coins",
+  "@lCoins": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "jingleTitle": "Concept Song",
+  "jingleSkip": "Skip",
+  "jingleContinue": "Continue",
+  "bossFightTitle": "Boss Fight",
+  "bossFightDragInstruction": "Drag to match",
+  "bossFightTapInstruction": "Tap the correct answer",
+  "livesRemaining": "{count} lives remaining",
+  "@livesRemaining": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "correct": "Correct!",
+  "wrong": "Try Again!",
+  "rewardTitle": "Quest Complete!",
+  "rewardSubtitle": "You earned",
+  "rewardContinue": "Continue Quest",
+  "rewardCustomize": "Customize Mentor",
+  "scrollTitle": "Your Cheat Sheet",
+  "scrollDownload": "Download PDF",
+  "profileTitle": "My Profile",
+  "settingsLanguage": "Language",
+  "settingsEnglish": "English",
+  "settingsTelugu": "Telugu",
+  "settingsHindi": "Hindi",
+  "mentorZayn": "Zayn",
+  "mentorArya": "Arya",
+  "mentorDhara": "Dhara",
+  "mentorSubjectPhysics": "Physics & Tech",
+  "mentorSubjectMath": "Math & Logic",
+  "mentorSubjectBio": "Bio & Social",
+  "topicLocked": "Locked",
+  "topicComplete": "Complete",
+  "topicAvailable": "Start",
+  "errorGeneral": "Something went wrong. Try again.",
+  "loading": "Loading..."
+}

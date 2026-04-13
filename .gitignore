@@ -1,0 +1,66 @@
+# ── Environment ───────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── Flutter / Dart ────────────────────────────────────────────
+apps/flutter_app/.dart_tool/
+apps/flutter_app/.flutter-plugins
+apps/flutter_app/.flutter-plugins-dependencies
+apps/flutter_app/.packages
+apps/flutter_app/build/
+apps/flutter_app/.idea/
+apps/flutter_app/*.iml
+apps/flutter_app/android/.gradle/
+apps/flutter_app/android/local.properties
+apps/flutter_app/android/key.properties
+apps/flutter_app/android/app/google-services.json
+apps/flutter_app/ios/Pods/
+apps/flutter_app/ios/.symlinks/
+apps/flutter_app/ios/Flutter/flutter_export_environment.sh
+apps/flutter_app/ios/Flutter/ephemeral/
+apps/flutter_app/macos/Flutter/ephemeral/
+apps/flutter_app/linux/.dart_tool/
+apps/flutter_app/web/
+apps/flutter_app/pubspec.lock
+
+# Generated Riverpod / build_runner files
+apps/flutter_app/lib/**/*.g.dart
+apps/flutter_app/lib/**/*.freezed.dart
+
+# ── Node.js ───────────────────────────────────────────────────
+services/gateway/node_modules/
+services/gateway/dist/
+services/gateway/*.log
+services/gateway/npm-debug.log*
+
+# ── Python / FastAPI ──────────────────────────────────────────
+services/ai-engine/__pycache__/
+services/ai-engine/**/__pycache__/
+services/ai-engine/*.pyc
+services/ai-engine/.venv/
+services/ai-engine/venv/
+services/ai-engine/.pytest_cache/
+services/ai-engine/.mypy_cache/
+
+# ── Docker ────────────────────────────────────────────────────
+.docker/
+
+# ── OS ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# ── IDEs ──────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.iml
+
+# ── Supabase local ────────────────────────────────────────────
+supabase/.branches/
+supabase/.temp/
+
+# ── Generated PDFs / temp ─────────────────────────────────────
+*.pdf
+/tmp/

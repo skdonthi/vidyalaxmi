@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ topic.title_en }} — VidyaLaxmi Scroll</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap');
+
+    :root {
+      --bg:        {{ bg_color }};
+      --surface:   #0F1117;
+      --primary:   {{ primary_color }};
+      --secondary: {{ secondary_color }};
+      --success:   {{ success_color }};
+      --text:      {{ text_color }};
+      --muted:     #6B7280;
+      --gold:      #FFD700;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Lexend', sans-serif;
+      padding: 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ── Header ──────────────────────────────────────────────── */
+    .header {
+      text-align: center;
+      margin-bottom: 32px;
+      padding: 24px;
+      border: 2px solid var(--primary);
+      border-radius: 16px;
+      background: linear-gradient(135deg, #0A1420, #050505);
+      box-shadow: 0 0 32px rgba(0,242,255,0.2);
+    }
+    .header .brand {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .header h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--primary);
+      text-shadow: 0 0 20px rgba(0,242,255,0.5);
+    }
+    .header .subtitle {
+      font-size: 16px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .mentor-badge {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 6px 16px;
+      border: 1px solid {{ topic.mentor_color }};
+      border-radius: 20px;
+      color: {{ topic.mentor_color }};
+      font-size: 13px;
+      box-shadow: 0 0 12px {{ topic.mentor_color }}40;
+    }
+
+    /* ── Manga Panels ────────────────────────────────────────── */
+    .panels-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .panel {
+      background: var(--surface);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+      page-break-inside: avoid;
+    }
+    .panel.full-width {
+      grid-column: 1 / -1;
+    }
+    .panel-header {
+      padding: 12px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .panel-body {
+      padding: 16px;
+    }
+
+    /* ── Intro Panel ─────────────────────────────────────────── */
+    .panel-intro .panel-header {
+      background: linear-gradient(90deg, rgba(0,242,255,0.2), transparent);
+      color: var(--primary);
+      border-bottom: 1px solid rgba(0,242,255,0.2);
+    }
+    .panel-intro .panel-body h2 {
+      font-size: 20px;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .panel-intro .panel-body p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── Lesson Panel ────────────────────────────────────────── */
+    .panel-lesson .panel-header {
+      background: linear-gradient(90deg, rgba(255,0,229,0.15), transparent);
+      color: var(--secondary);
+      border-bottom: 1px solid rgba(255,0,229,0.2);
+    }
+    .letter-display {
+      font-size: 80px;
+      font-weight: 700;
+      color: var(--secondary);
+      text-shadow: 0 0 30px rgba(255,0,229,0.5);
+      text-align: center;
+      line-height: 1;
+      margin: 8px 0;
+    }
+    .roman {
+      text-align: center;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .example {
+      display: inline-block;
+      background: rgba(255,0,229,0.1);
+      border: 1px solid rgba(255,0,229,0.3);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .speech-bubble {
+      background: rgba(0,242,255,0.08);
+      border: 1px solid rgba(0,242,255,0.2);
+      border-radius: 12px;
+      border-bottom-left-radius: 2px;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: var(--primary);
+      margin-top: 8px;
+      position: relative;
+    }
+
+    /* ── Quiz Panel ──────────────────────────────────────────── */
+    .panel-quiz .panel-header {
+      background: linear-gradient(90deg, rgba(57,255,20,0.15), transparent);
+      color: var(--success);
+      border-bottom: 1px solid rgba(57,255,20,0.2);
+    }
+    .quiz-question {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .quiz-answer {
+      font-size: 48px;
+      color: var(--success);
+      text-shadow: 0 0 20px rgba(57,255,20,0.5);
+      text-align: center;
+      padding: 8px;
+    }
+    .quiz-hint {
+      font-size: 13px;
+      color: var(--muted);
+      font-style: italic;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 8px;
+      margin-top: 8px;
+    }
+
+    /* ── Summary Panel ───────────────────────────────────────── */
+    .panel-summary .panel-header {
+      background: linear-gradient(90deg, rgba(255,215,0,0.15), transparent);
+      color: var(--gold);
+      border-bottom: 1px solid rgba(255,215,0,0.2);
+    }
+    .panel-summary .panel-body h2 {
+      font-size: 22px;
+      color: var(--gold);
+      text-shadow: 0 0 20px rgba(255,215,0,0.4);
+      margin-bottom: 8px;
+    }
+    .next-topic {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 8px 16px;
+      border: 1px solid var(--primary);
+      border-radius: 8px;
+      color: var(--primary);
+      font-size: 14px;
+    }
+
+    /* ── Footer ──────────────────────────────────────────────── */
+    .footer {
+      text-align: center;
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .footer span { color: var(--primary); }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand">VidyaLaxmi · Cyber-India Edition · Scroll</div>
+    <h1>{{ topic.title_en }}</h1>
+    <div class="subtitle">{{ topic.title_te }}</div>
+    <div class="mentor-badge">Guide: {{ topic.mentor_name }}</div>
+  </div>
+
+  <!-- Manga Panels -->
+  <div class="panels-grid">
+    {% for panel in topic.panels %}
+
+      {% if panel.type == 'intro' %}
+        <div class="panel panel-intro full-width">
+          <div class="panel-header">📖 Introduction</div>
+          <div class="panel-body">
+            <h2>{{ panel.title }}</h2>
+            <p>{{ panel.text }}</p>
+          </div>
+        </div>
+
+      {% elif panel.type == 'lesson' %}
+        <div class="panel panel-lesson">
+          <div class="panel-header">⚡ Learn</div>
+          <div class="panel-body">
+            <div class="letter-display">{{ panel.letter }}</div>
+            <div class="roman">/ {{ panel.romanization }} /</div>
+            <span class="example">{{ panel.example }}</span>
+            <div class="speech-bubble">{{ panel.fun_fact }}</div>
+          </div>
+        </div>
+
+      {% elif panel.type == 'quiz' %}
+        <div class="panel panel-quiz">
+          <div class="panel-header">🎯 Quick Quiz</div>
+          <div class="panel-body">
+            <div class="quiz-question">{{ panel.question }}</div>
+            <div class="quiz-answer">{{ panel.answer }}</div>
+            <div class="quiz-hint">Hint: {{ panel.hint }}</div>
+          </div>
+        </div>
+
+      {% elif panel.type == 'summary' %}
+        <div class="panel panel-summary full-width">
+          <div class="panel-header">🏆 Quest Complete</div>
+          <div class="panel-body">
+            <h2>{{ panel.title }}</h2>
+            <p>{{ panel.text }}</p>
+            <div class="next-topic">Next Quest → {{ panel.next_topic }}</div>
+          </div>
+        </div>
+      {% endif %}
+
+    {% endfor %}
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Generated by <span>VidyaLaxmi AI Engine</span> · Knowledge is the ultimate Power-Up
+  </div>
+
+</body>
+</html>
