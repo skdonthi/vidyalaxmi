@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:go_router/go_router.dart';
@@ -89,7 +90,7 @@ class _JingleScreenState extends ConsumerState<JingleScreen>
     Future.delayed(const Duration(milliseconds: 100), () {
       if (!mounted) return;
       
-      final oldLyric = _currentLyric;
+      final currentLyric = _currentLyric;
       setState(() {
         _position = _position + const Duration(milliseconds: 100);
         if (_position.inSeconds >= 10) _canSkip = true;
@@ -99,9 +100,11 @@ class _JingleScreenState extends ConsumerState<JingleScreen>
         }
       });
 
-      final newLyric = _currentLyric;
-      if (newLyric != null && newLyric != oldLyric) {
-        _speak(newLyric.textFor(ref.read(localeProvider).languageCode));
+      // Only speak if we just entered a new lyric line
+      if (currentLyric != null && 
+          _position.inMilliseconds >= currentLyric.startMs && 
+          _position.inMilliseconds < currentLyric.startMs + 150) {
+        _speak(currentLyric.textFor(ref.read(localeProvider).languageCode));
       }
 
       if (!_finished) _simulatePlayback();
@@ -221,7 +224,7 @@ class _JingleScreenState extends ConsumerState<JingleScreen>
                       if (_canSkip && !_finished)
                         Expanded(
                           child: ZButton(
-                            label: 'Skip',
+                            label: AppLocalizations.of(context)!.jingleSkip,
                             variant: ZButtonVariant.ghost,
                             onPressed: () => context.pushReplacement(
                               '/boss-fight/${widget.topicId}',
@@ -232,7 +235,7 @@ class _JingleScreenState extends ConsumerState<JingleScreen>
                       if (_finished)
                         Expanded(
                           child: ZButton(
-                            label: 'Start Challenge',
+                            label: AppLocalizations.of(context)!.topicAvailable,
                             icon: Icons.play_arrow,
                             onPressed: () => context.pushReplacement(
                               '/boss-fight/${widget.topicId}',
