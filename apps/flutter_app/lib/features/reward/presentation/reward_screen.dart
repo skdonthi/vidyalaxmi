@@ -8,6 +8,7 @@ import '../../../core/router/app_router.dart';
 import '../../../core/theme/z_colors.dart';
 import '../../../core/theme/z_text_styles.dart';
 import '../../../shared/providers/economy_provider.dart';
+import '../../../shared/providers/progress_provider.dart';
 import '../../../shared/widgets/lcoin_counter.dart';
 import '../../../shared/widgets/z_button.dart';
 
