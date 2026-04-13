@@ -60,6 +60,11 @@ class _RewardScreenState extends ConsumerState<RewardScreen>
           amount: widget.coinsEarned,
           description: 'Completed topic: ${widget.topicId}',
         );
+
+    // Invalidate providers to ensure UI updates
+    ref.invalidate(userProgressProvider);
+    ref.invalidate(lCoinBalanceProvider);
+    ref.invalidate(streakDaysProvider);
   }
 
   @override
