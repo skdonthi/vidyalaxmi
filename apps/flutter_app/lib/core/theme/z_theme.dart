@@ -80,11 +80,11 @@ abstract final class ZTheme {
         hintStyle: ZTextStyles.bodyMuted,
         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       ),
-      cardTheme: CardTheme(
+      cardTheme: const CardThemeData(
         color: ZColors.surface,
         elevation: 0,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: const BorderRadius.all(Radius.circular(16)),
           side: const BorderSide(color: ZColors.border),
         ),
         margin: EdgeInsets.zero,

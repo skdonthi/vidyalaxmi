@@ -123,8 +123,8 @@ class _DragDropChallengeState extends State<DragDropChallenge> {
                             ),
                           ],
                         ),
-                ),
-              ),
+                );
+              },
               onAcceptWithDetails: (details) => _onDrop(pair.id, details.data),
             );
           }).toList(),

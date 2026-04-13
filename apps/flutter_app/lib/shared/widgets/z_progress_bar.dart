@@ -98,7 +98,7 @@ class _ZProgressBarState extends State<ZProgressBar>
                       borderRadius: BorderRadius.circular(4),
                     ),
                     child: FractionallySizedBox(
-                      widthFactor: partial,
+                      widthFactor: partial.toDouble(),
                       alignment: Alignment.centerLeft,
                       child: Container(
                         decoration: BoxDecoration(

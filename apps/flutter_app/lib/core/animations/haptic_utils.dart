@@ -15,7 +15,7 @@ abstract final class ZHaptics {
   /// Double buzz — wrong answer (80ms + 80ms, intensity 1.0).
   static Future<void> wrong() async {
     if (await Vibration.hasVibrator() ?? false) {
-      Vibration.vibrate(pattern: [0, 80, 60, 80], amplitudes: [0, 255, 0, 255]);
+      Vibration.vibrate(pattern: [0, 80, 60, 80], intensities: [0, 255, 0, 255]);
     } else {
       await HapticFeedback.heavyImpact();
       await Future.delayed(const Duration(milliseconds: 140));
@@ -46,7 +46,7 @@ abstract final class ZHaptics {
     if (await Vibration.hasVibrator() ?? false) {
       Vibration.vibrate(
         pattern: [0, 30, 30, 30, 30, 30],
-        amplitudes: [0, 204, 0, 204, 0, 204],
+        intensities: [0, 204, 0, 204, 0, 204],
       );
     } else {
       HapticFeedback.mediumImpact();

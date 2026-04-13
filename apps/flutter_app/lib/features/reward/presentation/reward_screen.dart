@@ -231,7 +231,7 @@ class _ConfettiPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final rng = Object.hashCode(progress);
+    final rng = progress.hashCode;
     for (int i = 0; i < 60; i++) {
       final x = ((rng * (i + 1) * 1234567) % size.width.toInt()).abs().toDouble();
       final yStart = -20.0;
