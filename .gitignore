@@ -33,6 +33,7 @@ services/gateway/node_modules/
 services/gateway/dist/
 services/gateway/*.log
 services/gateway/npm-debug.log*
+# package-lock.json is committed — do NOT add it here
 
 # ── Python / FastAPI ──────────────────────────────────────────
 services/ai-engine/__pycache__/
