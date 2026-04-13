@@ -160,12 +160,15 @@ class _RewardScreenState extends ConsumerState<RewardScreen>
                       ZButton(
                         label: 'Continue Quest',
                         icon: Icons.arrow_forward,
-                        onPressed: () => context.go(ZRoutes.skillTree),
+                        onPressed: () {
+                          ref.invalidate(userProgressProvider);
+                          context.go(ZRoutes.skillTree);
+                        },
                         width: double.infinity,
                       ),
                       const SizedBox(height: 12),
                       ZButton(
-                        label: 'View Manga Cheat Sheet',
+                        label: 'View Cheat Sheet',
                         variant: ZButtonVariant.secondary,
                         icon: Icons.auto_stories,
                         onPressed: () => context.push('/scroll/${widget.topicId}'),
