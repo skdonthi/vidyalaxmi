@@ -57,6 +57,7 @@ Thumbs.db
 .vscode/settings.json
 .idea/
 *.iml
+.cursor
 
 # ── Supabase local ────────────────────────────────────────────
 supabase/.branches/
