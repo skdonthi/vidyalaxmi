@@ -9,9 +9,9 @@ const lexend = Lexend({
 });
 
 export const metadata: Metadata = {
-  title: "VyL — Learn. Earn. Own.",
+  title: "VyL · Learn. Earn. Own.",
   description:
-    "India's first gamified K-12 learning ecosystem. Duolingo meets Valorant — powered by AI, built for Bharat.",
+    "India's first gamified K-12 learning ecosystem. Duolingo meets Valorant, powered by AI, built for Bharat.",
 };
 
 export default function RootLayout({

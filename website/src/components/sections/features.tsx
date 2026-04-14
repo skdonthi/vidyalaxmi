@@ -23,12 +23,12 @@ const FEATURES = [
   {
     icon: Swords,
     title: "Boss Fight Challenges",
-    description: "Drag-drop and speed-tap quizzes powered by Adaptive Difficulty — no boring MCQs.",
+    description: "Drag-drop and speed-tap quizzes powered by Adaptive Difficulty. No boring MCQs.",
     color: "#FF00E5",
   },
   {
     icon: Coins,
-    title: "L-Coin Economy",
+    title: "VyL Coin Economy",
     description: "Earn coins for accuracy and speed. Spend them to customize your AI mentor's gear.",
     color: "#FFD700",
   },
@@ -47,7 +47,7 @@ const FEATURES = [
   {
     icon: Globe,
     title: "Bhashini Integration",
-    description: "Learn in Telugu, Hindi, English, and 10+ Indian languages — switch anytime.",
+    description: "Learn in Telugu, Hindi, English, and 10+ Indian languages. Switch anytime.",
     color: "#00F2FF",
   },
   {

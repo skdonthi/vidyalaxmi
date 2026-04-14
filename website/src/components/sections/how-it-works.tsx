@@ -23,14 +23,14 @@ const STEPS = [
     icon: Trophy,
     title: "Earn Rewards",
     time: "Instant",
-    description: "Collect L-Coins for speed and accuracy. Unlock cosmetics for your mentor.",
+    description: "Collect VyL Coins for speed and accuracy. Unlock cosmetics for your mentor.",
     color: "#FFD700",
   },
   {
     icon: BookOpen,
     title: "Get Your Scroll",
     time: "Auto-generated",
-    description: "Manga-style cheat sheet PDF — your permanent revision companion.",
+    description: "Manga-style cheat sheet PDF. Your permanent revision companion.",
     color: "#39FF14",
   },
 ];

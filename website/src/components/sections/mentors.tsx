@@ -13,7 +13,7 @@ const MENTORS = [
     icon: Cpu,
     color: "#00F2FF",
     gradient: "from-[#00F2FF]/20 to-transparent",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face",
+    avatar: "/characters/zayn_idle.png",
   },
   {
     name: "Arya",
@@ -23,7 +23,7 @@ const MENTORS = [
     icon: Calculator,
     color: "#FF00E5",
     gradient: "from-[#FF00E5]/20 to-transparent",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face",
+    avatar: "/characters/arya_idle.png",
   },
   {
     name: "Dhara",
@@ -33,14 +33,13 @@ const MENTORS = [
     icon: Leaf,
     color: "#39FF14",
     gradient: "from-[#39FF14]/20 to-transparent",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face",
+    avatar: "/characters/dhara_idle.png",
   },
 ];
 
 export default function Mentors() {
   return (
     <section id="mentors" className="relative py-24 sm:py-32">
-      {/* Divider line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -61,7 +60,7 @@ export default function Mentors() {
             </span>
           </h2>
           <p className="max-w-2xl mx-auto text-lg text-[#6B7280]">
-            Original character IPs designed for Indian learners. Each mentor owns a domain, 
+            Original character IPs designed for Indian learners. Each mentor owns a domain,
             a personality, and a color signature.
           </p>
         </motion.div>
@@ -83,11 +82,13 @@ export default function Mentors() {
               />
 
               <div className="relative z-10 p-8">
-                {/* Avatar + Icon */}
-                <div className="flex items-center gap-4 mb-6">
+                {/* Character image */}
+                <div className="flex justify-center mb-6">
                   <div
-                    className="relative w-16 h-16 rounded-2xl overflow-hidden ring-2"
-                    style={{ outlineColor: m.color, borderColor: m.color, ["--tw-ring-color" as string]: m.color }}
+                    className="relative w-32 h-32 rounded-2xl overflow-hidden"
+                    style={{
+                      boxShadow: `0 0 40px ${m.color}20`,
+                    }}
                   >
                     <img
                       src={m.avatar}
@@ -97,32 +98,35 @@ export default function Mentors() {
                     <div
                       className="absolute inset-0"
                       style={{
-                        background: `linear-gradient(135deg, ${m.color}30 0%, transparent 60%)`,
+                        background: `linear-gradient(135deg, ${m.color}15 0%, transparent 60%)`,
                       }}
                     />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white">{m.name}</h3>
-                    <p className="text-sm font-medium" style={{ color: m.color }}>
-                      {m.title}
-                    </p>
-                  </div>
+                </div>
+
+                <div className="text-center mb-4">
+                  <h3 className="text-xl font-bold text-white">{m.name}</h3>
+                  <p className="text-sm font-medium" style={{ color: m.color }}>
+                    {m.title}
+                  </p>
                 </div>
 
                 {/* Domain badge */}
-                <div
-                  className="inline-flex items-center gap-2 rounded-full px-3 py-1 mb-4 text-xs font-medium"
-                  style={{
-                    backgroundColor: `${m.color}15`,
-                    color: m.color,
-                    border: `1px solid ${m.color}30`,
-                  }}
-                >
-                  <m.icon className="w-3.5 h-3.5" />
-                  {m.domain}
+                <div className="flex justify-center mb-4">
+                  <div
+                    className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium"
+                    style={{
+                      backgroundColor: `${m.color}15`,
+                      color: m.color,
+                      border: `1px solid ${m.color}30`,
+                    }}
+                  >
+                    <m.icon className="w-3.5 h-3.5" />
+                    {m.domain}
+                  </div>
                 </div>
 
-                <p className="text-sm text-[#6B7280] leading-relaxed">{m.vibe}</p>
+                <p className="text-sm text-[#6B7280] leading-relaxed text-center">{m.vibe}</p>
 
                 {/* Bottom glow line */}
                 <div

@@ -122,8 +122,8 @@ export default function HeroSection() {
               className="max-w-xl text-lg text-[#6B7280] leading-relaxed"
             >
               VyL transforms boring textbooks into epic quests. AI mentors guide you through
-              jingle-powered lessons, boss-fight challenges, and earn L-Coins while mastering
-              STEM & Social Studies — in your language.
+              jingle-powered lessons, boss-fight challenges, and earn VyL Coins while mastering
+              STEM & Social Studies in your language.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -206,9 +206,9 @@ export default function HeroSection() {
                 {/* Loop steps */}
                 <div className="space-y-3 mb-6">
                   {[
-                    { icon: Sparkles, text: "Jingle Hook — 60s song per concept", color: "#00F2FF" },
-                    { icon: Zap, text: "Boss Fight — ADL-powered quiz", color: "#FF00E5" },
-                    { icon: Trophy, text: "Earn L-Coins & unlock gear", color: "#FFD700" },
+                    { icon: Sparkles, text: "Jingle Hook: 60s song per concept", color: "#00F2FF" },
+                    { icon: Zap, text: "Boss Fight: ADL-powered quiz", color: "#FF00E5" },
+                    { icon: Trophy, text: "Earn VyL Coins & unlock gear", color: "#FFD700" },
                     { icon: BookOpen, text: "Manga Cheat Sheet for revision", color: "#39FF14" },
                   ].map((step, i) => (
                     <div key={i} className="flex items-center gap-3">
@@ -262,7 +262,7 @@ export default function HeroSection() {
               className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 py-6 backdrop-blur-xl"
             >
               <h3 className="mb-4 px-6 text-sm font-medium text-[#6B7280]">
-                Powered by Bhashini — Learn in your language
+                Powered by Bhashini · Learn in your language
               </h3>
 
               <div

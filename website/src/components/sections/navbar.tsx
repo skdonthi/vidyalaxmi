@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
+import VyLLogo from "@/components/ui/vyl-logo";
 
 const LINKS = [
   { label: "Features", href: "#features" },
@@ -16,12 +17,10 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#050505]/80 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#00F2FF]/10 ring-1 ring-[#00F2FF]/30">
-            <span className="text-sm font-bold text-[#00F2FF]">V</span>
-          </div>
+        <a href="#" className="flex items-center gap-2.5">
+          <VyLLogo size={36} animate={true} />
           <span className="text-xl font-bold tracking-tight">
             Vy<span className="text-[#00F2FF]">L</span>
           </span>

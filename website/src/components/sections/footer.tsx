@@ -2,16 +2,15 @@
 
 import React from "react";
 import { ExternalLink, MessageCircle } from "lucide-react";
+import VyLLogo from "@/components/ui/vyl-logo";
 
 export default function Footer() {
   return (
     <footer className="border-t border-white/5 bg-[#050505]">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#00F2FF]/10">
-              <span className="text-xs font-bold text-[#00F2FF]">V</span>
-            </div>
+          <div className="flex items-center gap-2.5">
+            <VyLLogo size={28} animate={false} />
             <span className="text-lg font-bold tracking-tight">
               Vy<span className="text-[#00F2FF]">L</span>
             </span>
