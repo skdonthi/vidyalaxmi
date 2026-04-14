@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Cpu, Calculator, Leaf } from "lucide-react";
+import { asset } from "@/lib/base-path";
 
 const MENTORS = [
   {
@@ -91,7 +92,7 @@ export default function Mentors() {
                     }}
                   >
                     <img
-                      src={m.avatar}
+                      src={asset(m.avatar)}
                       alt={m.name}
                       className="w-full h-full object-cover"
                     />
